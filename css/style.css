@@ -1,53 +1,141 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	vertical-align: baseline;
+* {
+    box-sizing: border-box;
 }
 
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+.container {
+    min-height: 100vh;
 }
 
-body {
-	line-height: 1;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+nav {
+	justify-content: space-between;
+    align-items: center;
+    display: none;
+}
+
+nav > * {
+	margin-right: 3rem;
+}
+
+nav span {
+	color: red;
+}
+
+nav button {
+	background-color: black;
+    border: none;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+main {
 	width: 100%;
+	margin-top: 1rem;
+	min-height: 100vh;
+	border: 10px solid black;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "game1"
+        "game2"
+        "game3"
+        "game4"
+        "game5"
+        "game6"
+        "game7"
+        "game8";
 }
 
-ol, ul {
-	list-style: none;
+section {
+    position: relative;
 }
 
-blockquote, q {
-	quotes: none;
+section span:nth-child(2) {
+    background-color: red;
+    padding: 0.6rem;
+    position: absolute;
+    left: 0;
 }
 
-blockquote::before, blockquote::after,
-q::before, q::after {
-	content: '';
-	content: none;
+.game1 {
+    grid-area: game1;
 }
 
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+.game2 {
+    grid-area: game2;
 }
 
-/* Do not write a css rule above here! Use the space below  */
+.game3 {
+    grid-area: game3;
+}
 
+.game4 {
+    grid-area: game4;
+}
 
-/* Write your css below here */
+.game5 {
+    grid-area: game5;
+}
+
+.game6 {
+    grid-area: game6;
+}
+
+.game7 {
+    grid-area: game7;
+}
+
+.game8 {
+    grid-area: game08;
+}
+
+section > img {
+    width: 100%;
+    height: 100%;
+}
+
+header .logo img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+@media screen and (width >= 768px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "game1 game2"
+            "game3 game4"
+            "game5 game6"
+            "game7 game8";
+    }
+}
+
+@media screen and (width >= 1024px) {
+    nav {
+        display: flex;
+    }
+
+    main {
+        
+        grid-template-columns: repeat(5, 1fr);
+
+    
+        grid-template-areas:
+            "game1 game1 game2 game3 game4"
+            "game1 game1 game6 game7 game4"
+            "game1 game1 game5 game8 game8"
+        ;
+    }
+
+    .logo ~ span {
+        display: none;
+    }
+}
