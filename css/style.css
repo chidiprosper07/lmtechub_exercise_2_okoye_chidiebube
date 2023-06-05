@@ -1,3 +1,137 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    width: 100%;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+    content: "";
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Do not write a css rule above here! Use the space below  */
+
+/* Write your css below here */
+
 * {
     box-sizing: border-box;
 }
@@ -25,11 +159,11 @@ nav > * {
 }
 
 nav span {
-	color: red;
+	color: blue;
 }
 
 nav button {
-	background-color: black;
+	background-color: blue;
     border: none;
     color: #fff;
     padding: 0.5rem;
@@ -40,7 +174,7 @@ main {
 	width: 100%;
 	margin-top: 1rem;
 	min-height: 100vh;
-	border: 10px solid black;
+	border: 1px solid black;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -106,6 +240,18 @@ header .logo img {
     width: 50px;
     border-radius: 50%;
 }
+footer {
+	background-color: #0b2442;
+	color: white;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	padding: 10px;
+}
+
+footer span {
+	display: block;
+}
 
 @media screen and (width >= 768px) {
     main {
@@ -124,15 +270,27 @@ header .logo img {
     }
 
     main {
-        
+        /* grid-template-columns: repeat(6, 1fr); */
+
+        /* grid-auto-rows: 1fr; */
+
+        /* grid-template-areas: 
+		"game1 game1 game1 game2 game3 game4"
+		"game1 game1 game1 game2 game3 game4"
+		"game1 game1 game1 game6 game7 game4"
+		"game1 game1 game1 game5 game8 game8"
+		; */
         grid-template-columns: repeat(5, 1fr);
 
-    
+        /* grid-auto-rows: 1fr; */
         grid-template-areas:
             "game1 game1 game2 game3 game4"
             "game1 game1 game6 game7 game4"
             "game1 game1 game5 game8 game8"
-        ;
+            /* "game1 game1 game7 game8" */
+            /* "game1 game6 game7 game8" */
+            /* "game5 game6 game7 game8" */
+            /* "game1 game2 game3 game4" */;
     }
 
     .logo ~ span {
